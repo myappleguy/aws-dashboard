@@ -31,5 +31,5 @@ SCHEDULER.every '30s' do
     end
   end
 
-  send_event('running_ec2_cost', { current: current_cost.round(2) * 24 })
+  send_event('running_ec2_cost', { current: (current_cost * 24).round(2) })
 end

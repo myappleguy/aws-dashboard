@@ -1,0 +1,16 @@
+<% content_for :title do %>AWS Dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="home" data-view="Text" data-title="AWS Dashboard" data-text="Stats n' Stuff" data-moreinfo="Updates every 30 Seconds"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="running_instances" data-view="Meter" data-title="Instances" data-min="0" data-max="100"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="running_ec2_cost" data-view="Number" data-title="EC2 Cost" data-moreinfo="Per day, estimated" data-prefix="$"></div>
+    </li>
+  </ul>
+</div>

@@ -7,10 +7,12 @@ ec2_prices = Hash.new
 
   prices_url = HTTParty.get("https://a0.awsstatic.com/pricing/1/deprecated/ec2/#{os}-od.json")
   prices = JSON.parse(prices_url.body)
+  require "pry"; binding.pry
   ireland = prices['config']['regions'][3]['instanceTypes'] if prices['config']['regions'][3]['region'] == 'eu-ireland'
+  region = prices['config']['regions'][0]['instanceTypes']
 
   ec2_prices[os] = Hash.new
-  ireland.each do |i|
+  region.each do |i|
     i['sizes'].each do |s|
       ec2_prices[os][s['size']] = s['valueColumns'][0]['prices']['USD']
     end
